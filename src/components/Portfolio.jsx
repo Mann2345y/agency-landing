@@ -1,40 +1,34 @@
 import React from "react";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      category: "E-Commerce",
-      title: "Beyt E-Commerce Platform",
+      category: "Real Estate",
+      title: "Beyt",
       description:
-        "A full-stack e-commerce platform built with Next.js and MongoDB, featuring secure payments, inventory management, and admin dashboard.",
-      image: "/api/placeholder/600/400",
-      technologies: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      features: [
-        "Secure Payment Gateway",
-        "Real-time Inventory",
-        "Admin Dashboard",
-        "Mobile Responsive",
-      ],
-      liveUrl: "#",
-      codeUrl: "#",
+        "A real-estate application that helps users find, buy, and sell properties with modern features and intuitive interface.",
+      technologies: ["Next.js", "MongoDB", "Tailwind CSS"],
+      liveUrl: "https://beyt.co",
     },
     {
       id: 2,
-      category: "SaaS",
-      title: "Crypadda Dashboard",
+      category: "Crypto",
+      title: "Crypadda",
       description:
-        "A comprehensive SaaS application dashboard with real-time analytics, user management, and subscription handling built with MERN stack.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      features: [
-        "Real-time Analytics",
-        "User Management",
-        "Subscription System",
-        "Data Visualization",
-      ],
-      liveUrl: "#",
-      codeUrl: "#",
+        "A site where users can checkout crypto trends, analyze market data, and stay updated with the latest cryptocurrency movements.",
+      technologies: ["React", "Node.js", "Chart.js"],
+      liveUrl: "https://crypadda.netlify.app",
+    },
+    {
+      id: 3,
+      category: "Marketing",
+      title: "Wobb",
+      description:
+        "An influencer marketing platform that connects brands with content creators and streamlines campaign management.",
+      technologies: ["React", "Express", "MongoDB"],
+      liveUrl: "https://wobb.ai",
     },
   ];
 
@@ -62,110 +56,84 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <ScrollAnimationWrapper
               key={project.id}
-              className={`glass-effect rounded-2xl overflow-hidden border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 animate-fadeInUp animate-stagger-${project.id}`}
+              animation="scale"
+              delay={index * 150}
             >
-              {/* Project Image */}
-              <div className="relative h-64 bg-gradient-to-br from-red-500/20 to-gray-800 flex items-center justify-center">
-                <div className="text-center animate-scaleIn">
-                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto animate-float">
-                    <span className="text-2xl font-bold">
-                      {project.title.charAt(0)}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-8">
-                {/* Category Badge */}
-                <div className="inline-block bg-red-600/20 text-red-300 px-3 py-1 rounded-full text-sm mb-4 border border-red-500/30">
-                  {project.category}
-                </div>
-
-                {/* Project Title */}
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  {project.title}
-                </h3>
-
-                {/* Project Description */}
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-white">
-                    Key Features:
-                  </h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {project.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm">
-                        <span className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2"></span>
-                        <span className="text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-white">
-                    Technologies Used:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-700"
-                      >
-                        {tech}
+              <div className="glass-effect rounded-2xl overflow-hidden border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                {/* Project Image */}
+                <div className="relative h-48 bg-gradient-to-br from-red-500/20 to-gray-800 flex items-center justify-center">
+                  <div className="text-center animate-scaleIn">
+                    <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mb-3 mx-auto animate-float">
+                      <span className="text-xl font-bold">
+                        {project.title.charAt(0)}
                       </span>
-                    ))}
+                    </div>
+                    <h3 className="text-xl font-bold">{project.title}</h3>
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <button className="flex-1 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-white font-medium transition-colors flex items-center justify-center gap-2">
-                    <span>View Live</span>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                {/* Project Content */}
+                <div className="p-6">
+                  {/* Category Badge */}
+                  <div className="inline-block bg-red-600/20 text-red-300 px-3 py-1 rounded-full text-sm mb-3 border border-red-500/30">
+                    {project.category}
+                  </div>
+
+                  {/* Project Title */}
+                  <h3 className="text-xl font-bold mb-3 text-white">
+                    {project.title}
+                  </h3>
+
+                  {/* Project Description */}
+                  <p className="text-gray-400 mb-4 leading-relaxed text-sm">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="bg-gray-800 text-gray-300 px-2 py-1 rounded-full text-xs border border-gray-700"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="mt-4">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-white font-medium transition-colors flex items-center justify-center gap-2 text-sm"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </button>
-                  <button className="flex-1 border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                    <span>View Code</span>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
-                  </button>
+                      <span>View Live</span>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
 

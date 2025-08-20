@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 const Services = () => {
   const services = [
@@ -108,64 +109,40 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <ScrollAnimationWrapper
               key={index}
-              className={`glass-effect p-8 rounded-2xl border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 animate-fadeInUp animate-stagger-${
-                index + 1
-              }`}
+              animation="fadeUp"
+              delay={index * 200}
             >
-              {/* Icon */}
-              <div className="mb-6 animate-float">{service.icon}</div>
+              <div className="glass-effect p-8 rounded-2xl border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                {/* Icon */}
+                <div className="mb-6 animate-float">{service.icon}</div>
 
-              {/* Title */}
-              <h3 className="text-2xl font-bold mb-4 text-white">
-                {service.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {service.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                {service.description}
-              </p>
+                {/* Description */}
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
 
-              {/* Features List */}
-              <ul className="space-y-3">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm">
-                    <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Features List */}
+                <ul className="space-y-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center text-sm"
+                    >
+                      <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollAnimationWrapper>
           ))}
-        </div>
-
-        {/* Additional Services Info */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-red-600/20 to-red-400/20 rounded-2xl p-8 border border-red-500/30">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Complete Frontend & Backend Solutions
-            </h3>
-            <p className="text-gray-300 text-lg mb-6 max-w-3xl mx-auto">
-              From responsive designs and SEO optimizations to comprehensive
-              analytics, we provide end-to-end solutions using cutting-edge
-              Next.js and MERN stack technologies.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <span className="bg-red-600/20 text-red-300 px-4 py-2 rounded-full border border-red-500/30">
-                SEO Optimization
-              </span>
-              <span className="bg-red-600/20 text-red-300 px-4 py-2 rounded-full border border-red-500/30">
-                Analytics Integration
-              </span>
-              <span className="bg-red-600/20 text-red-300 px-4 py-2 rounded-full border border-red-500/30">
-                Performance Monitoring
-              </span>
-              <span className="bg-red-600/20 text-red-300 px-4 py-2 rounded-full border border-red-500/30">
-                Responsive Design
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

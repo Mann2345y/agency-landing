@@ -86,17 +86,13 @@ const Banner = () => {
               →
             </span>
           </button>
-          <button className="glass-effect border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2">
-            <span className="animate-pulse">▶</span>
-            Watch Demo
-          </button>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="animate-fadeInUp animate-stagger-1">
             <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
-              50+
+              3
             </div>
             <div className="text-gray-400 text-sm">Projects Delivered</div>
           </div>
@@ -108,7 +104,7 @@ const Banner = () => {
           </div>
           <div className="animate-fadeInUp animate-stagger-3">
             <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
-              5+
+              3+
             </div>
             <div className="text-gray-400 text-sm">Years Experience</div>
           </div>

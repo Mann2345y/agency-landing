@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 const Team = () => {
   const teamMembers = [
@@ -8,7 +9,7 @@ const Team = () => {
       role: "Full-Stack Developer & Co-Founder",
       title: "Lead Developer",
       description:
-        "Expert in MERN stack and Next.js with 8+ years of experience building scalable web applications.",
+        "Expert in MERN stack and Next.js with 3+ years of experience building scalable web applications.",
       image: "/api/placeholder/400/400",
       specializes: ["Next.js", "React", "Node.js", "MongoDB", "TypeScript"],
       bio: "Passionate developer focused on creating high-performance, user-centric digital experiences with modern web technologies.",
@@ -56,117 +57,70 @@ const Team = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {teamMembers.map((member) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <ScrollAnimationWrapper
               key={member.id}
-              className={`glass-effect rounded-2xl overflow-hidden border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 animate-fadeInUp animate-stagger-${member.id}`}
+              animation="scale"
+              delay={index * 200}
             >
-              {/* Member Image */}
-              <div className="relative h-80 bg-gradient-to-br from-red-500/20 to-gray-800 flex items-center justify-center">
-                <div className="text-center animate-scaleIn">
-                  <div className="w-32 h-32 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto animate-float">
-                    <span className="text-4xl font-bold">
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold">{member.name}</h3>
-                  <p className="text-red-400 text-lg">{member.title}</p>
-                </div>
-              </div>
-
-              {/* Member Content */}
-              <div className="p-8">
-                {/* Role */}
-                <div className="inline-block bg-red-600/20 text-red-300 px-4 py-2 rounded-full text-sm mb-4 border border-red-500/30">
-                  {member.role.split("&")[0].trim()}
-                </div>
-
-                {/* Name and Title */}
-                <h3 className="text-3xl font-bold mb-2 text-white">
-                  {member.name}
-                </h3>
-                <p className="text-red-400 text-lg font-medium mb-4">
-                  {member.role}
-                </p>
-
-                {/* Description */}
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {member.description}
-                </p>
-
-                {/* Bio */}
-                <p className="text-gray-300 mb-6 text-sm leading-relaxed italic">
-                  "{member.bio}"
-                </p>
-
-                {/* Specializations */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-white">
-                    Specializes in:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {member.specializes.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="bg-red-600/20 text-red-300 px-3 py-1 rounded-full text-sm border border-red-500/30"
-                      >
-                        {skill}
+              <div className="glass-effect rounded-2xl overflow-hidden border border-gray-800 hover:border-red-500 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 h-[360px] flex flex-col">
+                {/* Member Image */}
+                <div className="relative h-48 bg-gradient-to-br from-red-500/20 to-gray-800 flex items-center justify-center flex-shrink-0">
+                  <div className="text-center animate-scaleIn">
+                    <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mb-2 mx-auto animate-float">
+                      <span className="text-2xl font-bold">
+                        {member.name.charAt(0)}
                       </span>
-                    ))}
+                    </div>
+                    <h3 className="text-xl font-bold">{member.name}</h3>
+                    <p className="text-red-400 text-sm">{member.title}</p>
                   </div>
                 </div>
 
-                {/* Contact Button */}
-                <button className="w-full bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-white font-medium transition-colors flex items-center justify-center gap-2">
-                  <span>Connect with {member.name}</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </button>
+                {/* Member Content */}
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Role */}
+                    <div className="inline-block bg-red-600/20 text-red-300 px-2 py-1 rounded-full text-xs mb-2 border border-red-500/30">
+                      {member.role.split("&")[0].trim()}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-400 mb-3 leading-relaxed text-xs h-12 overflow-hidden">
+                      {member.description.length > 120
+                        ? member.description.substring(0, 120) + "..."
+                        : member.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    {/* Specializations */}
+                    <div className="mb-3">
+                      <div className="flex flex-wrap gap-1">
+                        {member.specializes.slice(0, 3).map((skill, index) => (
+                          <span
+                            key={index}
+                            className="bg-red-600/20 text-red-300 px-2 py-0.5 rounded-full text-xs border border-red-500/30"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                        {member.specializes.length > 3 && (
+                          <span className="bg-gray-600/20 text-gray-300 px-2 py-0.5 rounded-full text-xs border border-gray-500/30">
+                            +{member.specializes.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
 
         {/* Team Stats */}
-        <div className="mt-20">
-          <div className="bg-gradient-to-r from-red-600/20 to-red-400/20 rounded-2xl p-12 border border-red-500/30">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              Why Choose Our Team?
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-red-500 mb-2">
-                  8+
-                </div>
-                <div className="text-gray-300">Years Combined Experience</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-red-500 mb-2">
-                  50+
-                </div>
-                <div className="text-gray-300">Successful Projects</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-red-500 mb-2">
-                  24/7
-                </div>
-                <div className="text-gray-300">Dedicated Support</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
