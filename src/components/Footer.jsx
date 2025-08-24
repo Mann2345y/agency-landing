@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="text-2xl font-bold text-red-500 mb-4 font-poppins">
-              dunetech
+              Dunetech
             </div>
             <p className="text-gray-400 mb-6 max-w-md font-inter">
               Professional web development agency building high-performance
