@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://dunetech.vercel.app", // Replace with your actual domain
+  siteUrl: process.env.SITE_URL || "https://dunetech.net", // Replace with your actual domain
   generateRobotsTxt: true, // Generate robots.txt file
   generateIndexSitemap: false, // Set to true for large sites
   exclude: ["/api/*", "/admin/*"], // Exclude specific paths
@@ -13,7 +13,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      "https://dunetech.vercel.app/server-sitemap-index.xml", // For dynamic sitemaps
+      "https://dunetech.net/server-sitemap-index.xml", // For dynamic sitemaps
     ],
   },
   transform: async (config, path) => {

@@ -5,8 +5,8 @@ Disallow: /api/
 Disallow: /admin/
 
 # Host
-Host: https://dunetech.vercel.app
+Host: https://dunetech.net
 
 # Sitemaps
-Sitemap: https://dunetech.vercel.app/sitemap.xml
-Sitemap: https://dunetech.vercel.app/server-sitemap-index.xml
+Sitemap: https://dunetech.net/sitemap.xml
+Sitemap: https://dunetech.net/server-sitemap-index.xml

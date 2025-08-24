@@ -5,8 +5,8 @@ export const siteConfig = {
     "Build High-Performance Websites with Our Web Development Agency | dunetech",
   description:
     "Professional web development agency specializing in React, Next.js, and modern web technologies. We build high-performance websites, custom web applications, and provide SEO optimization services.",
-  url: "https://dunetech.vercel.app", // Replace with your actual domain
-  ogImage: "https://dunetech.vercel.app/og-image.jpg",
+  url: "https://dunetech.net", // Replace with your actual domain
+  ogImage: "https://dunetech.net/logo.png",
   creator: "dunetech Team",
   keywords: [
     "web development agency",
@@ -22,7 +22,7 @@ export const siteConfig = {
   ],
   author: {
     name: "dunetech",
-    url: "https://dunetech.vercel.app",
+    url: "https://dunetech.net",
   },
 };
 

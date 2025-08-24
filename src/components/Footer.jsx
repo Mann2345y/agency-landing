@@ -174,7 +174,7 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4 text-center font-poppins">
             Get In Touch
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
             <div>
               <h4 className="font-semibold mb-2 font-poppins">Email</h4>
               <Link
@@ -182,15 +182,6 @@ const Footer = () => {
                 className="text-red-400 hover:text-red-300 transition-colors font-inter"
               >
                 hello@dunetech.com
-              </Link>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2 font-poppins">Phone</h4>
-              <Link
-                href="tel:+1234567890"
-                className="text-red-400 hover:text-red-300 transition-colors font-inter"
-              >
-                +1 (234) 567-8900
               </Link>
             </div>
             <div>

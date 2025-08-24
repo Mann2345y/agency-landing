@@ -85,6 +85,10 @@ const Banner = () => {
           <span className="text-red-500 font-semibold">Next.js</span> and{" "}
           <span className="text-red-500 font-semibold">MERN stack</span>,
           delivering scalable solutions that drive your business forward.
+          <br />
+          <span className="text-red-400 font-semibold">
+            Launch your website & app today!
+          </span>
         </p>
 
         {/* CTA Buttons */}
