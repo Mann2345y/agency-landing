@@ -12,6 +12,8 @@
   --font-heading: var(--font-poppins), system-ui, -apple-system, sans-serif;
   --font-poppins: var(--font-poppins), system-ui, -apple-system, sans-serif;
   --font-inter: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-smooch-sans: var(--font-smooch-sans), system-ui, -apple-system,
+    sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

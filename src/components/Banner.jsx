@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import Logoimage from "../../public/logo.png";
 
 const Banner = () => {
   return (
@@ -10,9 +12,16 @@ const Banner = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between p-6 px-8 backdrop-blur-sm bg-black/50">
-        <div className="text-2xl font-bold text-red-500 animate-fadeInLeft">
-          DevCraft
+      <nav className="relative z-10 flex items-center justify-between p-6 px-16 backdrop-blur-sm bg-black/50">
+        <div className="flex flex-col gap-1">
+          <Image
+            src={Logoimage}
+            alt="dunetech logo image"
+            className="h-12 w-auto object-contain"
+          />
+          <h2 className="!font-smooch-sans text-2xl tracking-tight font-semibold">
+            Dunetech
+          </h2>
         </div>
 
         <div className="hidden md:flex items-center space-x-8 animate-fadeInDown">
@@ -56,13 +65,13 @@ const Banner = () => {
       {/* Hero Banner */}
       <section className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center">
         {/* Badge */}
-        <div className="mb-8 px-4 py-2 glass-effect-red rounded-full text-red-400 text-sm flex items-center gap-2 animate-fadeInUp animate-stagger-1">
+        <div className="mb-8 px-4 py-2 glass-effect-red rounded-full text-red-400 text-xs flex items-center gap-2 animate-fadeInUp animate-stagger-1">
           <span className="text-red-500 animate-float">⚙️</span>
           Next.js & MERN Stack Specialists
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fadeInUp animate-stagger-2">
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fadeInUp animate-stagger-2">
           Building Digital
           <br />
           <span className="gradient-text underline decoration-red-500">
@@ -71,7 +80,7 @@ const Banner = () => {
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mb-12 animate-fadeInUp animate-stagger-3">
+        <p className="text-lg md:text-xl text-gray-400 max-w-4xl mb-12 animate-fadeInUp animate-stagger-3">
           We craft cutting-edge web applications using{" "}
           <span className="text-red-500 font-semibold">Next.js</span> and{" "}
           <span className="text-red-500 font-semibold">MERN stack</span>,
@@ -91,28 +100,28 @@ const Banner = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="animate-fadeInUp animate-stagger-1">
-            <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
+            <div className="text-2xl md:text-3xl font-bold gradient-text animate-pulse">
               3
             </div>
-            <div className="text-gray-400 text-sm">Projects Delivered</div>
+            <div className="text-gray-400 text-xs">Projects Delivered</div>
           </div>
           <div className="animate-fadeInUp animate-stagger-2">
-            <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
+            <div className="text-2xl md:text-3xl font-bold gradient-text animate-pulse">
               98%
             </div>
-            <div className="text-gray-400 text-sm">Client Satisfaction</div>
+            <div className="text-gray-400 text-xs">Client Satisfaction</div>
           </div>
           <div className="animate-fadeInUp animate-stagger-3">
-            <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
+            <div className="text-2xl md:text-3xl font-bold gradient-text animate-pulse">
               3+
             </div>
-            <div className="text-gray-400 text-sm">Years Experience</div>
+            <div className="text-gray-400 text-xs">Years Experience</div>
           </div>
           <div className="animate-fadeInUp animate-stagger-4">
-            <div className="text-3xl md:text-4xl font-bold gradient-text animate-pulse">
+            <div className="text-2xl md:text-3xl font-bold gradient-text animate-pulse">
               24/7
             </div>
-            <div className="text-gray-400 text-sm">Support</div>
+            <div className="text-gray-400 text-xs">Support</div>
           </div>
         </div>
       </section>

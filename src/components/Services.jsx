@@ -97,10 +97,10 @@ const Services = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fadeInUp">
             Our Services
           </h2>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto animate-fadeInUp animate-stagger-1">
+          <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto animate-fadeInUp animate-stagger-1">
             We offer comprehensive web development services to bring your
             digital vision to life
           </p>
@@ -119,7 +119,7 @@ const Services = () => {
                 <div className="mb-6 animate-float">{service.icon}</div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-xl font-bold mb-4 text-white">
                   {service.title}
                 </h3>
 
@@ -133,7 +133,7 @@ const Services = () => {
                   {service.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center text-sm"
+                      className="flex items-center text-xs"
                     >
                       <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
                       <span className="text-gray-300">{feature}</span>
