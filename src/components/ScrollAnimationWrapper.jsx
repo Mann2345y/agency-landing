@@ -8,7 +8,7 @@ const ScrollAnimationWrapper = ({
   delay = 0,
   className = "",
 }) => {
-  const [ref, isVisible] = useScrollAnimation(0.1, "0px 0px -100px 0px");
+  const [ref, isVisible] = useScrollAnimation(0.2, "0px 0px -50px 0px");
 
   const getAnimationClass = () => {
     switch (animation) {

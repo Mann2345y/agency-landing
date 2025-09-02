@@ -38,6 +38,17 @@ const Portfolio = () => {
       image: "/projects/wobb-project.jpg",
       alt: "Wobb influencer marketing platform showing campaign dashboard and creator profiles",
     },
+    {
+      id: 4,
+      category: "E-commerce",
+      title: "InfinityDesigns - Personalized Gifts Platform",
+      description:
+        "A modern e-commerce platform specializing in personalized gifts and custom products. Features advanced customization tools, seamless ordering process, and premium quality products for every occasion.",
+      technologies: ["Next.js", "React", "E-commerce", "Payment Integration"],
+      liveUrl: "https://ecom-id.vercel.app/",
+      image: "/projects/infinitydesigns-project.jpg",
+      alt: "InfinityDesigns e-commerce platform showing custom gift products and personalization features",
+    },
   ];
 
   return (
@@ -67,7 +78,7 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <ScrollAnimationWrapper
               key={project.id}
