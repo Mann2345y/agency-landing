@@ -38,7 +38,7 @@ export function generateStructuredData() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",
-      email: "hello@dunetech.com",
+      email: "hello@dunetech.net",
       availableLanguage: "English",
     },
     address: {
@@ -58,11 +58,6 @@ export function generateStructuredData() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.url}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const servicesSchema = {

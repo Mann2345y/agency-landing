@@ -1,0 +1,15 @@
+{
+  "name": "dunetech",
+  "short_name": "dunetech",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

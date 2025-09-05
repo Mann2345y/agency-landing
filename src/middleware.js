@@ -17,10 +17,14 @@ export function middleware(request) {
     "camera=(), microphone=(), geolocation=()"
   );
 
-  // Cache static assets
+  // Cache static assets (but not HTML)
   if (
     request.nextUrl.pathname.startsWith("/images") ||
-    request.nextUrl.pathname.startsWith("/_next/static")
+    request.nextUrl.pathname.startsWith("/_next/static") ||
+    request.nextUrl.pathname.startsWith("/public") ||
+    request.nextUrl.pathname.match(
+      /\.(?:png|jpg|jpeg|gif|webp|avif|svg|css|js|woff2?)$/
+    )
   ) {
     response.headers.set(
       "Cache-Control",

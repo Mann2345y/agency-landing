@@ -4,7 +4,10 @@ import Logoimage from "../../public/logo.png";
 
 const Banner = () => {
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <header
+      id="home"
+      className="relative min-h-screen bg-black text-white overflow-hidden"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
@@ -63,7 +66,10 @@ const Banner = () => {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center">
+      <section
+        className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center"
+        aria-labelledby="main-heading"
+      >
         {/* Badge */}
         <div className="mb-8 px-4 py-2 glass-effect-red rounded-full text-red-400 text-xs flex items-center gap-2 animate-fadeInUp animate-stagger-1">
           <span className="text-red-500 animate-float">⚙️</span>
@@ -71,7 +77,10 @@ const Banner = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fadeInUp animate-stagger-2">
+        <h1
+          id="main-heading"
+          className="text-4xl md:text-6xl font-bold mb-8 animate-fadeInUp animate-stagger-2"
+        >
           Building Digital
           <br />
           <span className="gradient-text underline decoration-red-500">
@@ -129,7 +138,7 @@ const Banner = () => {
           </div>
         </div>
       </section>
-    </div>
+    </header>
   );
 };
 

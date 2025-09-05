@@ -4,7 +4,7 @@ import Portfolio from "@/components/Portfolio";
 import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
-// import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSection";
 import { siteConfig } from "@/lib/metadata";
 
 // Generate metadata for the homepage
@@ -22,7 +22,7 @@ export async function generateMetadata() {
       url: siteConfig.url,
       images: [
         {
-          url: `${siteConfig.url}/hero-image.jpg`,
+          url: `${siteConfig.url}/logo.png`,
           width: 1200,
           height: 630,
           alt: "dunetech Web Development Agency - Building Modern Websites",
@@ -34,7 +34,7 @@ export async function generateMetadata() {
       title: "Build High-Performance Websites with Our Web Development Agency",
       description:
         "Professional web development agency specializing in React, Next.js, and modern web technologies.",
-      images: [`${siteConfig.url}/hero-image.jpg`],
+      images: [`${siteConfig.url}/logo.png`],
     },
     alternates: {
       canonical: siteConfig.url,
@@ -54,6 +54,9 @@ export default function Home() {
       </ScrollAnimationWrapper>
       <ScrollAnimationWrapper animation="fadeUp" delay={100}>
         <Team />
+      </ScrollAnimationWrapper>
+      <ScrollAnimationWrapper animation="fadeUp" delay={150}>
+        <FAQSection />
       </ScrollAnimationWrapper>
       <ScrollAnimationWrapper animation="fadeUp" delay={0}>
         <Footer />

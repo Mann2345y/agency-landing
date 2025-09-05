@@ -34,6 +34,12 @@ export const metadata = {
   keywords: siteConfig.keywords,
   authors: [siteConfig.author],
   creator: siteConfig.creator,
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 
   // OpenGraph
   openGraph: {
@@ -49,7 +55,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: siteConfig.title,
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
   },
@@ -95,13 +101,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Preload critical resources */}
-        <link
-          rel="preload"
-          href="/hero-image.jpg"
-          as="image"
-          type="image/jpeg"
-        />
+        {/* Resource hints */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link
           rel="preconnect"

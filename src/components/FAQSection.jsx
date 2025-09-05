@@ -43,7 +43,11 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section
+      id="faq"
+      className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8"
+      aria-labelledby="faq-heading"
+    >
       <div className="max-w-4xl mx-auto">
         {/* FAQ Header */}
         <div className="text-center mb-12">
@@ -60,7 +64,7 @@ const FAQSection = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-4" role="list">
           {faqs.map((faq) => (
             <div
               key={faq.id}
@@ -71,6 +75,7 @@ const FAQSection = () => {
                 onClick={() => toggleFAQ(faq.id)}
                 aria-expanded={openFAQ === faq.id}
                 aria-controls={`faq-answer-${faq.id}`}
+                id={`faq-question-${faq.id}`}
               >
                 <h3 className="text-base font-semibold text-gray-900 font-poppins pr-4">
                   {faq.question}
@@ -136,7 +141,7 @@ const FAQSection = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -12,9 +12,6 @@ module.exports = {
         disallow: ["/api/", "/admin/"],
       },
     ],
-    additionalSitemaps: [
-      "https://dunetech.net/server-sitemap-index.xml", // For dynamic sitemaps
-    ],
   },
   transform: async (config, path) => {
     return {
